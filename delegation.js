@@ -45,3 +45,18 @@ triangle.init = function init(sidesArray) {
 
 var myTriangle = Object.create(triangle).init([3, 4, 5])
 console.log(myTriangle.getInfo())
+
+
+var createSquare = function createSquare(sidesArray) {
+  return Object.create(square).init(sidesArray)
+}
+
+var createTriangle = function createTriangle(sidesArray) {
+  return Object.create(triangle).init(sidesArray)
+}
+
+var square2 = createSquare(5)
+console.log(square2.getInfo())
+
+var triangle2 = createTriangle([3, 6, 9])
+console.log(triangle2.getInfo())
