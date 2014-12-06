@@ -31,9 +31,17 @@ square.init = function init(side) {
   return this
 }
 
-
 var mySquare = Object.create(square).init(2)
 
 console.log(mySquare.getInfo())
 console.log(shape.isPrototypeOf(mySquare))
 
+var triangle = Object.create(shape)
+triangle.init = function init(sidesArray) {
+  shape.init.call(this, 'triangle', sidesArray)
+
+  return this
+}
+
+var myTriangle = Object.create(triangle).init([3, 4, 5])
+console.log(myTriangle.getInfo())
