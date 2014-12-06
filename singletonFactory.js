@@ -3,16 +3,18 @@
  */
  /* jshint bitwise : true, eqeqeq : true, forin : true, noarg : true, noempty : true, nonew : true,
    asi : true, esnext : true, laxcomma : true, sub : true, browser : true, node : true, phantom : true */
-function singletonFactory() {
+function neoSingletonFactory() {
+  "use strict";
+
   var neo = { skills : [] }
 
   return function() { return neo }
 }
 
 
-var createSingleton = singletonFactory()
-  , neo = createSingleton()
-  , mrAnderson = createSingleton()
+var createNeo = neoSingletonFactory()
+  , neo = createNeo()
+  , mrAnderson = createNeo()
 
 
 neo.skills.push('kung fu')
